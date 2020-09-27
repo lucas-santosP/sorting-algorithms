@@ -1,4 +1,4 @@
-#include "sorts.h"
+#include "../include/sorts.h"
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
