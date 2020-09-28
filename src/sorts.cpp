@@ -36,6 +36,48 @@ void selectionSort(int *array, int arrayLength) {
   }
 }
 
+void merge(int *array, int first, int middle, int last) {
+  int index1 = first;
+  int index2 = middle;
+  int i = 0;
+  int *arrayOrdered = new int[last];
+
+  while ((index1 < middle) && (index2 < last)) {
+    if (array[index1] < array[index2]) {
+      arrayOrdered[i] = array[index1];
+      index1++;
+    } else {
+      arrayOrdered[i] = array[index2];
+      index2++;
+    }
+    i++;
+  }
+
+  while (index1 < middle) {
+    arrayOrdered[i] = array[index1];
+    i++;
+    index1++;
+  }
+  while (index2 < last) {
+    arrayOrdered[i] = array[index1];
+    i++;
+    index2++;
+  }
+
+  for (int j = first; j < last; j++) {
+    array[j] = arrayOrdered[j - first];
+  }
+}
+
+void mergeSort(int *array, int first, int last) {
+  if (first < last - 1) {
+    int middle = (first + last) / 2;
+    mergeSort(array, first, middle);
+    mergeSort(array, middle, last);
+    merge(array, first, middle, last);
+  }
+}
+
 // # InsertSort #
 //	## Pros: Simplicidade, Duas vezes mais rapido que BubbleSort,
 //	normalmente mais rapido que SelectionSort e é estável.
@@ -49,3 +91,9 @@ void selectionSort(int *array, int arrayLength) {
 //	custo O(n^2).
 //	## Indicações: Arquivos com registros muito grandes, e
 //	pequenos arquivos.
+
+// # MergeSort #
+//	## Pros: Estável, fase de divisão não altera nenhuma posição, e custo
+// log(n).
+//	## Contras: ?.
+//	## Indicações: ?.

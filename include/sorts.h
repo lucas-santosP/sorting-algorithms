@@ -4,5 +4,6 @@
 
 void selectionSort(int *array, int arrayLength);
 void insertSort(int *array, int arrayLength);
+void mergeSort(int *array, int first, int last);
 
 #endif

@@ -36,11 +36,11 @@ void printArray(int *array, int arrayLength) {
 }
 
 int main() {
-  int arrayLength = 10;
+  int arrayLength = 5;
   int *array = generateRandomArray(arrayLength);
 
   printArray(array, arrayLength);
-  selectionSort(array, arrayLength);
+  mergeSort(array, 0, arrayLength);
   printArray(array, arrayLength);
 
   system("pause");
