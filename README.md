@@ -13,5 +13,3 @@
 # MergeSort
 
 - Pros: Estável, fase de divisão não altera nenhuma posição, e custo log(n).
-- Contras: ?.
-- Indicações: ?.
